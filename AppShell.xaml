@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="task_list_app_maui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:task_list_app_maui.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="DarkGreen"
+    Title="Lista de Tarefas">
+
+    <!-- <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" /> -->
+
+    <Shell.ToolbarItems>
+        <ToolbarItem Text="Pesquisar"
+                     IconImageSource="search.png"
+                     Clicked="OnSearchClicked" />
+        
+        <ToolbarItem Text="Sobre"
+                     Order="Secondary"
+                     Clicked="OnAboutClicked" />
+    </Shell.ToolbarItems>
+
+    <TabBar>
+        <Tab Title="Tarefas Pendentes"
+             Icon="task_list.png">
+            
+            <ShellContent ContentTemplate="{DataTemplate views:TarefasPendentesView}" />
+        </Tab>
+        
+        <Tab Title="Tarefas Concluídas"
+             Icon="task_check.png">
+            
+            <ShellContent ContentTemplate="{DataTemplate views:TarefasConcluidasView}" />
+        </Tab>
+    </TabBar>
+</Shell>
