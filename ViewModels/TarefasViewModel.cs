@@ -12,8 +12,8 @@ public partial class TarefasViewModel : ObservableObject, IDisposable
 {
     protected readonly AppDbContext _context;
 
-    public ObservableCollection<Tarefa> TarefasPendentes { get ; set ; } = [];
-    public ObservableCollection<Tarefa> TarefasConcluidas { get ; set ; } = [];
+    public ObservableCollection<Tarefa> TarefasPendentes { get ; set ; } = new();
+    public ObservableCollection<Tarefa> TarefasConcluidas { get ; set ; } = new();
 
     [ObservableProperty]
     public Tarefa tarefa = new();
